@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Semangat Magang ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease;
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .heart {
+      font-size: 40px;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #e63950;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GANTI LINK DI BAWAH DENGAN FILE MP3 KOMANG -->
+  <audio id="bgm" autoplay loop>
+    <source src="https://example.com/komang.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="card">
+    <h1>Semangat Magang ❤️</h1>
+    <p>
+      Hai <b>Juniar Martha Adelsina Bire</b> 💖<br><br>
+      Semangat ya untuk hari magangnya 💪<br>
+      Aku tahu kamu pasti bisa melewati semuanya dengan baik.<br>
+      Jangan lupa jaga kesehatan dan tetap percaya diri ya ✨<br><br>
+      Aku selalu dukung kamu dari sini ❤️
+    </p>
+
+    <div class="heart">❤️</div>
+
+    <button onclick="showMessage()">Klik Aku</button>
+    <button onclick="toggleMusic()">Play / Pause 🎶</button>
+  </div>
+
+  <script>
+    const music = document.getElementById("bgm");
+
+    // autoplay fix untuk HP (butuh interaksi)
+    document.body.addEventListener("click", () => {
+      music.play().catch(()=>{});
+    });
+
+    function showMessage() {
+      alert("Juniar Martha Adelsina Bire ❤️ Aku bangga banget sama kamu! Tetap semangat ya sayang!");
+    }
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+
+</body>
+</html>
